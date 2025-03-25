@@ -3,9 +3,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-llm=ChatGoogleGenerativeAI(model='gemini-2.0-flash')
+llm=ChatGoogleGenerativeAI(model='gemini-2.0-flash', credentials_path="path/to/your/credentials.json")
 
-result=llm.invoke("what is the capital of india?")
+prompt=input("Ask Your Question:")
+
+result=llm.invoke(prompt)
 
 print(result.content)
 
